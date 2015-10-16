@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<meta charset="ISO-8859-1">
+
+<title>Spring + Angular</title>
+</head>
+<body ng-app="app" ng-controller="MainController">
+	<div class="container">
+	
+	<h2>Lista de Produtos</h2>
+	<button type="button" class="btn btn-lg btn-default">{{nome}}</button>
+	<br>
+	<div ng-repeat="p in produtos">
+		<tr><td>{{p.descricao}}</td></tr>
+	</div>
+	
+	</div>
+</body>
+
+<script></script>
+
+<script src="assets/css/angular.min.js"></script>
+<script src="app/app.js"></script>
+</html>
