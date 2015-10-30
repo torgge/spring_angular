@@ -19,11 +19,11 @@ public class ProdutoResource {
 
 	@RequestMapping("/produto")
 	public Iterable<Produto> listaProdutos(){
-		return repository.findAll() ;
+		return repository.findAll();
 	}
-	
+			
 	@RequestMapping("/produto/{id}")
-	public Produto findByNome(@PathVariable long id){
+	public Produto findById(@PathVariable long id){
 		return repository.findOne(id);
 	}
 	
@@ -44,5 +44,13 @@ public class ProdutoResource {
 		repository.delete(id);
 	}
 	
-	
+	@RequestMapping("/produto/generate")
+	public Iterable<Produto> generateProdutos(){		
+		for(int i=0;i<10;i++){
+			Produto p = new Produto();
+			p.setDescricao("Produto"+i);
+			repository.save(p);
+		}
+		return repository.findAll();
+	}
 }
