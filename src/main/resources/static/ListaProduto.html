@@ -6,30 +6,21 @@
 <link rel="stylesheet" type="text/css" href="assets/angular-ui-grid/ui-grid.css">
 <link rel="stylesheet" type="text/css" href="assets/css/myGrid.css">
 <meta charset="ISO-8859-1">
-<link rel="styleSheet" href="assets/angular-ui-grid/ui-grid.min.css"/>
- 
+<link rel="styleSheet" href="assets/angular-ui-grid/ui-grid.min.css"/> 
 
-<title>Spring + Angular</title>
+<title>Lista Produtos</title>
 </head>
-<body ng-app="app">
-<div class="container">
-		<div class="row">
-		<div class="col-md-3">
-		   <ul class="nav">
-				<li><a href="Produto/Novo"> Adiciona Novo Produto </a></li>
-				<li><a href="Produto"> Lista Produtos </a></li>
-			</ul>
-		</div>
-		<div class="col-md-9">
-		  	<div ng-view></div>
-		</div>
+<body ng-app="app" ng-controller="ListaProdutoController">
+	<div class="container">
 
-		</div>
-
-    </div><!-- /.container -->
+		<h2>Lista de Produtos</h2>
+		<button type="button" class="btn btn-lg btn-default">{{nome}}</button>
+		<br>
+		<br>
+		<div id="grid01" ui-grid="{ data: produtos }" ui-grid-edit class="myGrid"></div>
+	</div>
 </body>
 
 <script src="assets/angular-ui-grid/node_modules/angular/angular.min.js"></script>
 <script src="assets/angular-ui-grid/ui-grid.min.js"></script>
-<script src="app/app.js"></script>
 </html>
